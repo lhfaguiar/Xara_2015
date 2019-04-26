@@ -10,7 +10,7 @@ use ieee.std_logic_1164.all;
 entity mux8x4 is
 	port (
 		 I1, I0 		: in std_logic_vector (3 downto 0);
-		 Q 				: out std_logic_vector(3 downto 0);
+		 Q 			: out std_logic_vector(3 downto 0);
 		 sel	 		: in std_logic
 	);
 end mux8x4;

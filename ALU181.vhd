@@ -18,21 +18,21 @@ entity ALU181 is
            B 					: in  	STD_LOGIC_VECTOR (3 downto 0);
            S 					: in  	STD_LOGIC_VECTOR (3 downto 0);
            Mode 				: in  	STD_LOGIC;
-           Carry_In			    : in  	STD_LOGIC;
-           Output 			    : inout STD_LOGIC_VECTOR (3 downto 0);
+           Carry_In			        : in  	STD_LOGIC;
+           Output 			        : inout STD_LOGIC_VECTOR (3 downto 0);
 
            -- por que usar inout?
            AeqB 				: out  	STD_LOGIC;
-           Carry_Generate 	    : inout STD_LOGIC;
-           Carry_Propagate      : inout STD_LOGIC;
-           Carry_Out 		    : out  	STD_LOGIC);
+           Carry_Generate 	                : inout STD_LOGIC;
+           Carry_Propagate                      : inout STD_LOGIC;
+           Carry_Out 		                : out  	STD_LOGIC);
 end ALU181;
 
 
 architecture Behavioral of ALU181 is
 
-	signal Nor_Vector 		: STD_LOGIC_VECTOR (8 downto 1);
-    signal auxiliar         : std_logic_vector (3 downto 0);
+    signal Nor_Vector 		: STD_LOGIC_VECTOR (8 downto 1);
+    signal auxiliar             : std_logic_vector (3 downto 0);
 
 begin
 
@@ -49,26 +49,25 @@ begin
 	Nor_Vector(6) <= not((not B(1)and S(1))or(S(0)and B(1))or A(1));
 	Nor_Vector(8) <= not((not B(0)and S(1))or(S(0)and B(0))or A(0));
 
-	Carry_Generate 	<= not(
-								   Nor_Vector(2)                                                         or
-								  (Nor_Vector(1) and Nor_Vector(4))                                      or
-								  (Nor_Vector(1) and Nor_Vector(3) and Nor_Vector(6))                    or
-								  (Nor_Vector(1) and Nor_Vector(3) and Nor_Vector(5)and Nor_Vector(8))
-									);
-	Carry_Propagate 	<= not(Nor_Vector(1) and Nor_Vector(3) and Nor_Vector(5) and Nor_Vector(7));
+	Carry_Generate <= not(
+		             Nor_Vector(2)                                                         or
+			     (Nor_Vector(1) and Nor_Vector(4))                                     or
+			     (Nor_Vector(1) and Nor_Vector(3) and Nor_Vector(6))                   or
+			     (Nor_Vector(1) and Nor_Vector(3) and Nor_Vector(5)and Nor_Vector(8))
+			   );
 
-	Carry_Out 			<= not(
-	                         Carry_Generate and
-	                         not(Nor_Vector(1) and Nor_Vector(3) and Nor_Vector(5) and Nor_Vector(7)and Carry_In)
-									 );
+	Carry_Propagate <= not(Nor_Vector(1) and Nor_Vector(3) and Nor_Vector(5) and Nor_Vector(7));
 
+	Carry_Out <= not(
+	                 Carry_Generate and
+	                 not(Nor_Vector(1) and Nor_Vector(3) and Nor_Vector(5) and Nor_Vector(7)and Carry_In)
+			);
 
 	processo : process(A, B, S, Mode, Carry_In)
 
 	begin
 
     AeqB <= '0';
-
 
 
 -- Funcional
@@ -109,6 +108,7 @@ begin
 				when "0100" => Output <= A +(A and not(B));
 				when "0101" => Output <= (A or B)+(A and not(B));
 				when "0110" => Output <= A - B -1;
+
                 if ieee.std_logic_unsigned."=" (Output, "1111") then
                     AeqB <= '1';
                 end if;

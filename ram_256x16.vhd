@@ -1,41 +1,41 @@
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-USE ieee.numeric_std.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
-ENTITY ram_256x16 IS
-	PORT
+entity ram_256x16 is
+	port
 	(
-		data			: IN  std_logic_vector(15 DOWNTO 0);
-		address			: IN  std_logic_vector(7 DOWNTO 0);
-		we				: IN  std_logic;
-		cs				: IN  std_logic;
-		q				: OUT std_logic_vector(15 DOWNTO 0)
+		data			: in  std_logic_vector(15 downto 0);
+		address			: in  std_logic_vector(7 downto 0);
+		we			: in  std_logic;
+		cs			: in  std_logic;
+		q			: out std_logic_vector(15 downto 0)
 	);
-END ram_256x16;
+end ram_256x16;
 
-ARCHITECTURE rtl OF ram_256x16 IS
-	TYPE RAM IS ARRAY(0 TO 256) OF std_logic_vector(15 DOWNTO 0);
+architecture rtl of ram_256x16 IS
+	type RAM is array(0 to 256) of std_logic_vector(15 downto 0);
 
-	SIGNAL ram_block : RAM;
-BEGIN
+	signal ram_block : RAM;
+begin
 	
-	PROCESS (we, cs, address, data)
-	BEGIN
---		IF (we'event AND we = '1') THEN
-		IF (we = '0') THEN
-			IF (cs = '0') THEN
+	process (we, cs, address, data)
+	begin
+--		if (we'event and we = '1') then
+		if (we = '0') then
+			if (cs = '0') then
 			    ram_block(to_integer(unsigned(address))) <= data;
-			END IF;
-		END IF;
-	END PROCESS;
+			end if;
+		end if;
+	end process;
 	
-	PROCESS (cs, ram_block, address)
-	BEGIN
-		IF (cs = '1') THEN
-			q <= "0000000000000000";
-		ELSE
+	process (cs, ram_block, address)
+	begin
+		if (cs = '1') then
+		    q <= "0000000000000000";
+		else
 			q <= ram_block(to_integer(unsigned(address)));
-		END IF;
-	END PROCESS;
+		end if;
+	end process;
 	
-END rtl;
+end rtl;

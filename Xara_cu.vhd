@@ -43,7 +43,7 @@ entity controlunit is
          CLEAR            : in std_logic;
 
          modo_memoria     : in std_logic;
-    );
+         );
 end controlunit;
 
 

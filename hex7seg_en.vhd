@@ -3,9 +3,9 @@ use ieee.std_logic_1164.all;
 
 entity hex7seg_en is
 	port (
-		x3, x2, x1, x0 : in std_logic;
-		enable : in std_logic;
-		a,b,c,d,e,f,g : out std_logic
+		x3, x2, x1, x0 		: in std_logic;
+		enable 				: in std_logic;
+		a,b,c,d,e,f,g 		: out std_logic
 	);
 end hex7seg_en;
 

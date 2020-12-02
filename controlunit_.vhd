@@ -15,19 +15,21 @@ use ieee.std_logic_1164.all;
 entity controlunit is
 	port (
 		 -- entrada memoria, sao os comandos
-		 memoria : in std_logic_vector (15 downto 0);
+		 memoria						: in std_logic_vector (15 downto 0);
 		 -- selecao da ALU
-		 S : out std_logic_vector(3 downto 0);
+		 S 								: out std_logic_vector(3 downto 0);
 		 -- selecao de valor do cin e de qual registrador ser ausado na ALU
-		 CIN, R1, R0 : out std_logic_vector (1 downto 0);
+		 CIN, R1, R0 					: out std_logic_vector (1 downto 0);
 		 -- sinais de controle do fluxo (esses definem quando as coisas acontecem)
-		 grava, clear_4regs, decoder_en, neg_clear_counter, count_en, load_reg_saida : out std_logic;
+		 grava, clear_4regs 			: out std_logic;
+		 decoder_en, neg_clear_counter 	: out std_logic;
+		 count_en, load_reg_saida 		: out std_logic;
 		 -- sinais de selecao de qual registrador recebe a saida da ALU (sao sinais de selecao de um decodificador)
-		 R20, R21 : out std_logic;
-		 CLOCK : in std_logic;
-		 CLEAR : in std_logic;
+		 R20, R21 						: out std_logic;
+		 CLOCK 							: in std_logic;
+		 CLEAR 							: in std_logic;
 		 -- me diz se eu gravo ou leio a memoria
-		 Modo_memoria : in std_logic
+		 Modo_memoria 					: in std_logic
 	);
 end controlunit;
 

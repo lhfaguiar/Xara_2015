@@ -18,21 +18,21 @@ entity ALU181 is
            B 					: in  	STD_LOGIC_VECTOR (3 downto 0);
            S 					: in  	STD_LOGIC_VECTOR (3 downto 0);
            Mode 				: in  	STD_LOGIC;
-           Carry_In			        : in  	STD_LOGIC;
-           Output 			        : inout STD_LOGIC_VECTOR (3 downto 0);
+           Carry_In			    : in  	STD_LOGIC;
+           Output 			    : inout STD_LOGIC_VECTOR (3 downto 0);
 
            -- por que usar inout?
            AeqB 				: out  	STD_LOGIC;
-           Carry_Generate 	                : inout STD_LOGIC;
-           Carry_Propagate                      : inout STD_LOGIC;
-           Carry_Out 		                : out  	STD_LOGIC);
+           Carry_Generate 	    : inout STD_LOGIC;
+           Carry_Propagate      : inout STD_LOGIC;
+           Carry_Out 		    : out  	STD_LOGIC);
 end ALU181;
 
 
 architecture Behavioral of ALU181 is
 
     signal Nor_Vector 		: STD_LOGIC_VECTOR (8 downto 1);
-    signal auxiliar             : std_logic_vector (3 downto 0);
+    signal auxiliar         : std_logic_vector (3 downto 0);
 
 begin
 

@@ -42,7 +42,7 @@ entity controlunit is
          CLOCK            : in std_logic;
          CLEAR            : in std_logic;
 
-         modo_memoria     : in std_logic;
+         modo_memoria     : in std_logic
          );
 end controlunit;
 

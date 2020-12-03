@@ -14,8 +14,8 @@ use ieee.std_logic_1164.all;
 
 entity decoder2x4 is
     port(
-        Sel     : in std_logic_vector(1 downto 0);
-        Output  : out std_logic_vector (3 downto 0)
+        Sel         : in std_logic_vector(1 downto 0);
+        OutputPort  : out std_logic_vector (3 downto 0)
     );
 end decoder2x4;
 

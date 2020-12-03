@@ -25,7 +25,7 @@ entity ALU181 is
            S 					: in  	STD_LOGIC_VECTOR (3 downto 0);
            Mode 				: in  	STD_LOGIC;
            Carry_In			    : in  	STD_LOGIC;
-           Output 			    : inout STD_LOGIC_VECTOR (3 downto 0);
+           Outputport		    : inout STD_LOGIC_VECTOR (3 downto 0);
 
            -- por que usar inout?
            AeqB 				: out  	STD_LOGIC;

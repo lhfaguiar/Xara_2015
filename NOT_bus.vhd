@@ -10,8 +10,8 @@ use ieee.std_logic_1164.all;
 
 entity NOT_bus is
 	port (
-		 Input    : in  std_logic_vector (3 downto 0);
-		 Q        : out std_logic_vector(3 downto 0)
+		 Input0    : in  std_logic_vector (3 downto 0);
+		 Q         : out std_logic_vector(3 downto 0)
 	);
 end NOT_bus;
 

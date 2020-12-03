@@ -2,6 +2,12 @@
 -- (Mode=1 e Mode=0 con Carry IN=1)
 
 
+-- ------------------------------------
+--  ALU181 
+-- ------------------------------------
+-- Author : Essa pessoa que fez esse trabalho
+---------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.std_logic_arith.all;

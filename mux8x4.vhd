@@ -1,3 +1,9 @@
+-- ------------------------------------
+--  Counter 8x4 Multiplexer
+-- ------------------------------------
+--  Author : Lai Aguiar
+---------------------------------------
+
 -- Multiplexador 8X4
 -- 1 bit de selecao
 -- XARA I

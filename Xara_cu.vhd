@@ -12,7 +12,11 @@
 -- 20160226
 -- Reformulacao completa da unidade de controle, redesenho da maquina de estados
 
-
+-- ------------------------------------
+--  Xara Control Unit
+-- ------------------------------------
+--  Author : Lai Aguiar
+---------------------------------------
 
 
 library ieee;

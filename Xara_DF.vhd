@@ -6,6 +6,14 @@
 -- pergunta: coloca a CU aqui como componente?!
 -- resposta: pode sim, nao tem uma regra, pode organizar como quiser desde que seja bem documentado e explicado.
 
+
+-- ------------------------------------
+--  Xara Dataflow
+-- ------------------------------------
+--  Author : Lai Aguiar
+---------------------------------------
+
+
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;

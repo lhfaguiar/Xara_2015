@@ -5,6 +5,12 @@
 -- IMPORTANTE!!
 -- usar biblioteca synopsys pra compilar
 
+-- ------------------------------------
+--  ALU181 
+-- ------------------------------------
+-- Author : Lai Aguiar
+---------------------------------------
+
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;

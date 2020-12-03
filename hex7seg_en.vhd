@@ -1,3 +1,9 @@
+-- ------------------------------------
+--  7 segment display decoder
+-- ------------------------------------
+--  Author : Lai Aguiar
+---------------------------------------
+
 library ieee;
 use ieee.std_logic_1164.all;
 
